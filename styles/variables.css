@@ -1,1 +1,47 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font-family: 'Inter-Variable';
+  --accent-font-family: 'PressStart2P-Regular';
+  --main-font-size: 18px;
+  --main-line-height: 1.16;
+  --line-height: 1.25;
+  --button-font-size: 14px;
+  --label-font-size: 14px;
+  --dialog-font-size: 14px;
+  --button-line-height: 0.9;
+  --header-font-weight: 400;
+  --color-text-shadow: rgb(255 255 255 / 0.5);
+  --card-title-font-weight: 700;
+  --card-text-font-weight: 400;
+  --padding-block-page: 100px;
+  --button-block-size: 38px;
+  --border: 2px solid #000;
+  --accent-color: rgb(0 0 0);
+  --bg-color: #fff;
+  --difference-color: #fff;
+  --text-color: #000;
+  --contour-color:rgb(0 0 0);
+  --animation-fill-color: rgb(255 0 0);
+  --header-margin-block: 100px;
+  --header-title-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header-text-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --padding-description-container: 25px;
+  --padding-inline-section: clamp(0rem, -8.143rem + 34.74vw, 23.125rem);
+  --sections-inline-size: 700px;
+  --gap: 20px;
+  --floppy-size: 39px;
+  --backdrop-dialog: rgb(0 0 0 / 0.8);
+  --header-content-padding-block: 120px;
+  --gradient-horizontal: repeating-linear-gradient(
+    to right, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px
+  );
+  --gradient-vertical: repeating-linear-gradient(
+    to bottom, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px
+  );
+  --gradient-transition-color: linear-gradient(
+    to bottom,
+    #e7e7e7 0.01%,
+    #1a1a1a 100%
+  );
+}
+
