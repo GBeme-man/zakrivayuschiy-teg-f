@@ -1,25 +1,27 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --main-font-family: 'Inter-Variable';
-  --accent-font-family: 'PressStart2P-Regular';
+  --main-font-family: 'Inter-Variable', sans-serif;
+  --accent-font-family: 'PressStart2P', fantasy;
   --main-font-size: 18px;
-  --main-line-height: 1.16;
-  --line-height: 1.25;
   --button-font-size: 14px;
   --label-font-size: 14px;
   --dialog-font-size: 14px;
-  --button-line-height: 0.9;
   --header-font-weight: 400;
-  --color-text-shadow: rgb(255 255 255 / 0.5);
-  --card-title-font-weight: 700;
+  --color-label-shadow: rgb(255 255 255);
+  --color-label-text: #000;
   --card-text-font-weight: 400;
   --padding-block-page: 100px;
   --button-block-size: 38px;
   --border: 2px solid #000;
   --accent-color: rgb(0 0 0);
   --bg-color: #fff;
+  --header-bg-color: #fff;
+  --card-item-bg-color: #fff;
+  --button-animation-color: #000;
+  --button-bg-color: #fff;
   --difference-color: #fff;
   --text-color: #000;
+  --bg-page-color: #d3d3d3;
   --contour-color:rgb(0 0 0);
   --animation-fill-color: rgb(255 0 0);
   --header-margin-block: 100px;
@@ -28,9 +30,14 @@
   --padding-description-container: 25px;
   --padding-inline-section: clamp(0rem, -8.143rem + 34.74vw, 23.125rem);
   --sections-inline-size: 700px;
-  --gap: 20px;
+  --sections-gap: 50px;
+  --card-list-gap: 50px;
+  --description-container-gap: 27px;
+  --dialog-gap: 30px;
+  --dialog-content-gap: 20px;
+  --header-gap: 20px;
   --floppy-size: 39px;
-  --backdrop-dialog: rgb(0 0 0 / 0.8);
+  --backdrop-dialog: rgb(0 0 0 / 0.75);
   --header-content-padding-block: 120px;
   --gradient-horizontal: repeating-linear-gradient(
     to right, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px

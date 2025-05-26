@@ -17,6 +17,7 @@
   padding-block: var(--padding-block-page);
   color: var(--text-color);
   font-family: var(--main-font-family), sans-serif;
+  background-color: var(--bg-page-color);
   background-image: var(--gradient-horizontal), var(--gradient-vertical), var(--gradient-transition-color);
   background-size: cover;
   background-attachment: fixed;
@@ -32,7 +33,7 @@
   margin-block-end: var(--header-margin-block);
   border: var(--border);
   font-family: var(--accent-font-family);
-  background-color: var(--bg-color);
+  background-color: var(--header-bg-color);
   inline-size: 100%;
   max-inline-size: var(--sections-inline-size);
 }
@@ -40,7 +41,7 @@
 .header__content {
   display: grid;
   justify-items: center;
-  gap: var(--gap);
+  gap: var(--header-gap);
   padding-block: var(--header-content-padding-block);
   font-weight: var(--header-font-weight);
 }
@@ -56,22 +57,21 @@
 }
 
 .cards__section {
-  --gap: 50px;
   display: grid;
   justify-self: center;
-  gap: var(--gap);
+  gap: var(--sections-gap);
   max-inline-size: var(--sections-inline-size);
 }
 
 .card__list {
   display: grid;
-  gap: var(--gap);
+  gap: var(--card-list-gap);
 }
 
 .card__item {
   border: var(--border);
   font-size: var(--main-font-size);
-  background-color: var(--bg-color);
+  background-color: var(--card-item-bg-color);
 }
 
 .card__title {
@@ -79,9 +79,9 @@
   flex-direction: column;
   padding-inline: 10px;
   padding-block: 4px;
-  font-weight: var(--card-title-font-weight);
   font-size: inherit;
-  line-height: var(--line-height);
+  line-height: 1.25;
+  font-variation-settings: 'wght' 700;
   text-wrap: wrap;
 }
 
@@ -93,6 +93,7 @@
 .card__image {
   display: block;
   object-fit: cover;
+  object-position: center;
   inline-size: 100%;
   aspect-ratio: 1 / 1;
 }
@@ -101,13 +102,14 @@
   position: absolute;
   z-index: 1;
   opacity: 0.5;
+  color: var(--color-label-text);
   font-family: var(--accent-font-family);
   font-size: var(--label-font-size);
   text-shadow: 
-  1px 0px var(--color-text-shadow), 
-  -1px 0px var(--color-text-shadow),
-  0px 1px var(--color-text-shadow), 
-  0px -1px var(--color-text-shadow);
+  1px 0px var(--color-label-shadow), 
+  -1px 0px var(--color-label-shadow),
+  0px 1px var(--color-label-shadow), 
+  0px -1px var(--color-label-shadow);
   inset-block-start: 23px;
   inset-inline-end: 11px;
   mix-blend-mode: hard-light;
@@ -122,22 +124,20 @@
 }
 
 .card__description_container {
-  --gap: 26px;
-  --line-height: 1.17;
   display: grid;
-  gap: var(--gap);
+  gap: var(--description-container-gap);
   padding-inline: var(--padding-description-container);
   padding-block: var(--padding-description-container);
-  line-height: var(--line-height);
+  line-height: 1.17;
+  font-variation-settings: 'wght' 400;
 }
 
 .buttons__container {
-  --gap: 6px;
   display: flex;
-  justify-self: flex-end;
+  justify-content: flex-end;
   align-items: center;
-  gap: var(--gap);
-  padding-inline-end: var(--padding-description-container);
+  gap: 6px;
+  padding-inline: var(--padding-description-container);
   padding-block-end: var(--padding-description-container);
   font-size: var(--button-font-size);
 }
@@ -149,6 +149,7 @@
   outline-color: transparent;
   transition: outline 0.3s ease;
   block-size: var(--button-block-size);
+  inline-size: 39px;
 }
 
 .core {
@@ -166,6 +167,10 @@
   opacity: 0;
 }
 
+.contour {
+  transition: fill 0.1s linear;
+}
+
 .card__icon-button:hover .core {
   fill: var(--contour-color);
   transition: fill 0.3s linear;
@@ -179,10 +184,14 @@
 
 .card__icon-button:active .core {
   fill: var( --animation-fill-color);
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .main-body {
   fill: var( --animation-fill-color);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
+  
 }
 
 .like-icon.is-liked .contour {
@@ -193,10 +202,13 @@
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .heart {
@@ -229,6 +241,7 @@
 
 .buttons-style {
   position: relative;
+  border: var(--border);
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
@@ -243,14 +256,13 @@
 }
 
 .buttons-style::before {
-  --bg-color: black;
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--bg-color);
+  background-color: var(--button-animation-color);
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
@@ -261,15 +273,13 @@
 } 
 
 .button__save {
-  --bg-color: #fff;
-  --padding: 15px;
   display: grid;
   justify-items: center;
   justify-self: center;
   gap: 8px;
-  padding-block: var(--padding);
+  padding-block: 15px;
   font-size: var(--button-font-size);
-  background-color: var(--bg-color);
+  background-color: var(--button-bg-color);
   inline-size: 310px;
   block-size: 84px;
 }
@@ -281,17 +291,18 @@
 }
 
 .floppy__icon {
+  --floppy-size: 28px;
   z-index: 1;
   color: var(--difference-color);
-  block-size: 28px;
-  inline-size: 28px;
+  block-size: var(--floppy-size);
+  inline-size: var(--floppy-size);
   mix-blend-mode: difference;
 }
 
 dialog[open] {
-  --gap: 30px;
   display: grid;
-  gap: var(--gap);
+  grid-template-rows: min-content min-content;
+  gap: var(--dialog-gap);
   border: var(--border);
   padding: 30px 38px;
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
@@ -303,10 +314,9 @@ dialog::backdrop {
 }
 
 .dialog__content {
-  --gap: 20px;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--gap);
+  gap: var(--dialog-content-gap);
 }
 
 .floppy__icon-dialog {
@@ -316,10 +326,9 @@ dialog::backdrop {
 }
 
 .dialog__text {
-  --line-height: 1.5;
   font-family: var(--accent-font-family);
   font-size: var(--dialog-font-size);
-  line-height: var(--line-height);
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
@@ -370,7 +379,6 @@ dialog::backdrop {
   .card__title {
     display: block;
     align-content: center;
-    block-size: 31px;
   }
   
   .button__save {
@@ -380,6 +388,10 @@ dialog::backdrop {
     padding: 0;
     block-size: 55px;
     inline-size: 335px;
+  }
+
+  .floppy__icon {
+    --floppy-size: 21px;
   }
 }
 
