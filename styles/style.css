@@ -143,12 +143,11 @@
 }
 
 .card__icon-button {
-  --button-block-size: 34px;
   border: none;
   padding: unset;
   outline-color: transparent;
   transition: outline 0.3s ease;
-  block-size: var(--button-block-size);
+  block-size: 34px;
   inline-size: 39px;
 }
 
@@ -291,11 +290,10 @@
 }
 
 .floppy__icon {
-  --floppy-size: 28px;
   z-index: 1;
   color: var(--difference-color);
-  block-size: var(--floppy-size);
-  inline-size: var(--floppy-size);
+  block-size: 28px;
+  inline-size: 28px;
   mix-blend-mode: difference;
 }
 
@@ -321,8 +319,8 @@ dialog::backdrop {
 
 .floppy__icon-dialog {
   align-self: center;
-  block-size: var(--floppy-size);
-  inline-size: var(--floppy-size);
+  block-size: 39px;
+  inline-size: 39px;
 }
 
 .dialog__text {
@@ -372,8 +370,7 @@ dialog::backdrop {
 
 @media (width >= 900px) {
   .header__content {
-    --header-content-padding-block: 128px;
-    padding-block: var(--header-content-padding-block);
+    padding-block: 128px;
   }
 
   .card__title {
@@ -387,11 +384,12 @@ dialog::backdrop {
     align-items: center;
     padding: 0;
     block-size: 55px;
-    inline-size: 335px;
+    inline-size: 339px;
   }
 
   .floppy__icon {
-    --floppy-size: 21px;
+    block-size: 21px;  /* иконка по макету ;) */
+    inline-size: 21px;
   }
 }
 
